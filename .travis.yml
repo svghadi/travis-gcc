@@ -1,23 +1,35 @@
 arch: ppc64le
 jobs:
   include:
-    - stage: Language Test
-      name: C
+    - stage: C Language Test
+      name: GCC
       language: c
-      compiler:
-        - clang
-        - gcc
+      compiler: gcc
+      script:
+        - $CC --version
+    - name: CLANG
+      language: c
+      compiler: clang
       script:
         - $CC --version
       
-    - name: CPP
+    - stage: CPP Language Test
+      name: GCC
       language: cpp
-      compiler:
-        - clang
-        - gcc
-        - /opt/at12.0/bin/g++
+      compiler: gcc
       script:
         - $CC --version
+    - name: CLANG
+      language: cpp
+      compiler: clang
+      script:
+        - $CC --version
+    - name: IBM ATC
+      language: cpp
+      compiler: /opt/at12.0/bin/g++
+      env: PATH=/opt/at14.0/bin:/opt/at14.0/sbin:$PATH CMAKE_PREFIX_PATH=/opt/at14.0/
+      script:
+        - /opt/at*/bin/g++ --version
 
 
 
