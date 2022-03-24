@@ -1,0 +1,6 @@
+arch: ppc64le
+compiler:
+  - clang
+  - gcc
+script:
+  - $CC --version
