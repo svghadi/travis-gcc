@@ -2,12 +2,6 @@ arch: ppc64le
 jobs:
   include:
 
-    - stage: Nodejs Language Test
-      language: node_js
-      node_js: lts/*
-      script:
-        - npm install -g gulp-cli
-        - gulp version
 
     - stage: JAVA Language Test
       name: JDK8
