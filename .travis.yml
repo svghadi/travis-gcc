@@ -3,10 +3,8 @@ jobs:
   include:
 
     - stage: DB Test
-      name: PostgreSQL
-      service: postgresql
-      before_script: psql -c 'create database travis_ci_test;' -U postgres
+      name: elasticsearch
+      service: elasticsearch
       script:
-        - psql --version
-        - psql -c 'SELECT datname FROM pg_database;' -U postgres
+        - echo "Not supported"
 
