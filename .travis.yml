@@ -5,12 +5,14 @@ jobs:
 
     - stage: Perl Language Test
       name: default version
+      install: skip
       language: perl
       script: 
         - perl -v
         - cpanm --version
     - name: 5.26 version
       language: perl
+      install: skip
       perl: 5.26
       script: 
         - perl -v
