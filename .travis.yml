@@ -5,18 +5,14 @@ jobs:
 
     - stage: Perl Language Test
       name: default version
-      install: skip
       language: perl
-      script: 
-        - perl -v
-        - cpanm --version
+      install: skip
+      script: perl -v
     - name: 5.26 version
       language: perl
-      install: skip
       perl: 5.26
-      script: 
-        - perl -v
-        - cpanm --version
+      install: skip
+      script: perl -v
     
     - stage: PHP Language Test
       name: default version
@@ -26,3 +22,19 @@ jobs:
       language: php
       php: 7.1.9
       script: php --version
+
+    - stage: Python 
+      name: 2.7
+      language: python
+      python: 2.7
+      install: skip
+      script: 
+        - python --version
+        - ls -l
+    - name: 3.8
+      language: python
+      python: 3.8
+      install: skip
+      script: 
+        - python --version
+        - ls -l
