@@ -3,24 +3,10 @@ jobs:
   include:
 
 
-    - stage: Perl Language Test
-      name: default version
-      language: perl
-      install: skip
-      script: perl -v
-    - name: 5.26 version
-      language: perl
-      perl: 5.26
-      install: skip
-      script: perl -v
-    
+
     - stage: PHP Language Test
-      name: default version
       language: php
-      script: php --version
-    - name: 7.1.9 version
-      language: php
-      php: 7.1.9
+      php: 8.0
       script: php --version
 
     - stage: Python 
