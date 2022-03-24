@@ -4,7 +4,7 @@ jobs:
 
     - stage: DB Test
       name: PostgreSQL
-      arch: amd64
+      dis: focal
       service: postgresql
       before_script: psql -c 'create database travis_ci_test;' -U postgres
       script:
