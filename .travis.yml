@@ -2,17 +2,8 @@ arch: ppc64le
 jobs:
   include:
 
-    - stage: Ruby Language Test
-      name: default version
-      language: ruby
-      install: skip
-      script: 
-        - ruby -v
-        - gem install bundler
-    - name: 3.1 version
-      language: ruby
-      rvm: 3.1
-      install: skip
-      script: 
-        - ruby -v
-        - gem install bundler
+    - stage: DB Test
+      name: POSTGRESQL
+      service: mysql
+      before_script: mysql -e 'CREATE DATABASE myapp_test;'
+      script: mysql --version
