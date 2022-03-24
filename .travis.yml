@@ -2,15 +2,13 @@ arch: ppc64le
 jobs:
   include:
 
-    - stage: GO Language Test
-      language: go
-      go: 1.16.x
+    - stage: Nodejs Language Test
+      language: node_js
+      node_js: lts/*
       script:
-        - go version
-        - go install github.com/google/ko@latest
-        - export PATH=$GOPATH/bin:$PATH
-        - ko version
-        
+        - npm install -g gulp-cli
+        - gulp version
+
     - stage: JAVA Language Test
       name: JDK8
       language: java
