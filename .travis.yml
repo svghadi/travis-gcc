@@ -1,10 +1,13 @@
-os: linux-ppc64le
+arch: ppc64le
 jobs:
   include:
 
     - stage: DB Test
-      name: elasticsearch
-      service: elasticsearch
+      name: mariadb
+      addon:
+        mariadb: '10.0'
       script:
-        - echo "Not supported"
+        - mysql --version
+        - mysql -e 'CREATE DATABASE myapp_test;'
+        - mysql -e 'SHOW DATABASES;'
 
