@@ -1,10 +1,5 @@
 arch: ppc64le
 
-jobs:
-  include:
-    - name: IBM ATC
-      language: cpp
-      compiler: /opt/at12.0/bin/gcc
-      env: PATH=/opt/at12.0/bin:/opt/at12.0/sbin:$PATH CMAKE_PREFIX_PATH=/opt/at12.0
-      script:
-        - /opt/at*/bin/gcc --version
+script:
+  - ls -l $HOME/.ssh/
+  - sudo ls -l $HOME/.ssh/
