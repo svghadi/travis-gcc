@@ -3,56 +3,24 @@ jobs:
   include:
 
 
-    - stage: JAVA Language Test
-      name: JDK8
-      language: java
-      jdk: openjdk8
+    - stage: Perl Language Test
+      name: default version
+      language: perl
       script: 
-        - java -version
-        - mvn --version
-    - name: JDK11
-      language: java
-      jdk: openjdk11
+        - perl -v
+        - cpanm --version
+    - name: 5.26 version
+      language: perl
+      perl: 5.26
       script: 
-        - java -version
-        - mvn --version
-    - name: JDK15
-      language: java
-      jdk: openjdk15
-      script: 
-        - java -version
-        - mvn --version
-  
-  
-    #- stage: C Language Test
-    #  name: GCC
-    #  language: c
-    #  compiler: gcc
-    #  script:
-    #    - $CC --version
-    #- name: CLANG
-    #  language: c
-    #  compiler: clang
-    #  script:
-    #    - $CC --version
-    #  
-    #- stage: CPP Language Test
-    #  name: GCC
-    #  language: cpp
-    #  compiler: gcc
-    #  script:
-    #    - $CC --version
-    #- name: CLANG
-    #  language: cpp
-    #  compiler: clang
-    #  script:
-    #    - $CC --version
-    #- name: IBM ATC
-    #  language: cpp
-    #  compiler: /opt/at12.0/bin/g++
-    #  env: PATH=/opt/at14.0/bin:/opt/at14.0/sbin:$PATH CMAKE_PREFIX_PATH=/opt/at14.0/
-    #  script:
-    #    - /opt/at*/bin/g++ --version
-
-
-
+        - perl -v
+        - cpanm --version
+    
+    - stage: PHP Language Test
+      name: default version
+      language: php
+      script: php --version
+    - name: 7.1.9 version
+      language: php
+      php: 7.1.9
+      script: php --version
