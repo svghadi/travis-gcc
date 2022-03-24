@@ -1,6 +1,8 @@
 arch: ppc64le
+language: c
 compiler:
   - clang
   - gcc
 script:
+  - env
   - $CC --version
