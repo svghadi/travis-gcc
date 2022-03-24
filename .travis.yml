@@ -1,10 +1,9 @@
-arch: ppc64le
+os: linux-ppc64le
 jobs:
   include:
 
     - stage: DB Test
       name: PostgreSQL
-      dis: focal
       service: postgresql
       before_script: psql -c 'create database travis_ci_test;' -U postgres
       script:
