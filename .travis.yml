@@ -3,11 +3,9 @@ jobs:
   include:
 
     - stage: DB Test
-      name: mariadb
-      addon:
-        mariadb: '10.0'
+      name: Mongodb(Not supported)
+      service: mongodb
       script:
-        - mysql --version
-        - mysql -e 'CREATE DATABASE myapp_test;'
-        - mysql -e 'SHOW DATABASES;'
+        - systemctl is-active mongodb
+        - echo "Not supported"
 
