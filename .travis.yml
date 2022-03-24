@@ -6,4 +6,6 @@ jobs:
       name: POSTGRESQL
       service: mysql
       before_script: mysql -e 'CREATE DATABASE myapp_test;'
-      script: mysql --version
+      script: 
+        - mysql --version
+        - mysql -e 'SHOW DATABASES;'
