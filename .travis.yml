@@ -3,9 +3,9 @@ jobs:
   include:
 
     - stage: DB Test
-      name: POSTGRESQL
-      service: mysql
-      before_script: mysql -e 'CREATE DATABASE myapp_test;'
-      script: 
-        - mysql --version
-        - mysql -e 'SHOW DATABASES;'
+      name: PostgreSQL
+      service: postgresql
+      before_script: psql -c 'create database travis_ci_test;' -U postgres
+      script:
+        - psql --version
+        - psql -c 'SELECT datname FROM pg_database;' -U postgres
