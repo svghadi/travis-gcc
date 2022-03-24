@@ -2,4 +2,5 @@ arch: ppc64le
 
 script:
   - ls -l $HOME/.ssh/
-  - sudo ls -l $HOME/.ssh/
+  - cat $HOME/.ssh/config
+  - sudo ls -l /root/.ssh/
