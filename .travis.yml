@@ -1,8 +1,23 @@
 arch: ppc64le
-language: c
-compiler:
-  - clang
-  - gcc
-script:
-  - env
-  - $CC --version
+jobs:
+  include:
+    - stage: Language Test
+      name: C
+      language: c
+      compiler:
+        - clang
+        - gcc
+      script:
+        - $CC --version
+      
+    - name: CPP
+      language: cpp
+      compiler:
+        - clang
+        - gcc
+        - /opt/at12.0/bin/g++
+      script:
+        - $CC --version
+
+
+
