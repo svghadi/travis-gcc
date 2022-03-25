@@ -1,6 +1,8 @@
-arch: ppc64le
+os: linux-ppc64le
+
+service: elasticsearch
+before_script: sleep 15s
 
 script:
-  - ls -l $HOME/.ssh/
-  - cat $HOME/.ssh/config
-  - sudo ls -l /root/.ssh/
+  - systemctl is-active elasticsearch
+  - elasticsearch --version
